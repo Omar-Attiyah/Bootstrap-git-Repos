@@ -18,6 +18,70 @@
     <title>NuCamp: A Better Way To Camp</title>
 </head>
 
+<div id="reserveModal" class="modal fade" role="dialog">
+
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-info text-white">
+                <h3 class="modal-title">Reserve a Campsite</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-group row">
+                            <label for="numCampers" class="col-form-label col-sm-6">Number of Campers</label>
+
+                            <div class="col">
+                                <select name="numCampers" id="numCampers" class="form-control">
+                                    <option value="Select...">Select...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="date" class="col-form-label col-sm-6">Date</label>
+
+                            <div class="col">
+                                <input type="date" id="date" name="date" class="form-control" placeholder="mm/dd/yyyy">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+
+                            <label class="col-sm-6 col-form-label">Campsite Type</label>
+
+                            <div class="btn-group btn-group-toggle col-2" data-toggle="buttons">
+                                <label class="btn btn-success active">
+                                    <input type="checkbox" name="siteType" id="siteTent" value="tent" checked
+                                        autocomplete="off"> Tent
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="checkbox" name="siteType" id="siteRV" value="RV" checked
+                                        autocomplete="off"> Rv
+                                </label>
+                            </div>
+
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" data-dismiss="modal" class="btn btn-secondary">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <body>
 
     <header class="jumbotron jumbotron-fluid">
@@ -34,9 +98,8 @@
                 </div>
 
                 <div class="col col-md-4 col-xl-2 mt-4">
-                    <a role="button" href="#reserveForm" class="btn btn-primary btn-lg text-nowrap" data-html="true"
-                        data-placement="bottom" data-toggle="tooltip"
-                        title="Or Call us at <br/> <strong>1-206-555-1234</strong>">Reserve Form</a>
+                    <a role="button" data-toggle="modal" data-target="#reserveModal"
+                        class="btn btn-primary btn-lg text-nowrap">Reserve Form</a>
                 </div>
             </div>
         </div>
@@ -232,7 +295,7 @@
 
         </div>
 
-        <div class="row row-content">
+        <!--  <div class="row row-content">
             <div class="col-sm-6 mx-auto">
                 <div class="card">
                     <h3 class="card-header bg-info text-white">
@@ -272,7 +335,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
     <footer class="site-footer">
@@ -315,11 +378,7 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
+
 
 </body>
 
