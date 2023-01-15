@@ -68,7 +68,7 @@
                             </div>
 
                         </div>
-                        
+
                         <div class="row">
                             <div class="col">
                                 <button type="submit" data-dismiss="modal" class="btn btn-secondary">Cancel</button>
@@ -229,6 +229,13 @@
                         <span class="sr-only">Next</span>
                     </a>
 
+
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <i class="fa fa-pause"></i>
+                    </button>
+
+
+
                 </div>
             </div>
         </div>
@@ -295,47 +302,6 @@
 
         </div>
 
-        <!--  <div class="row row-content">
-            <div class="col-sm-6 mx-auto">
-                <div class="card">
-                    <h3 class="card-header bg-info text-white">
-                        Reserve a Campsite
-                    </h3>
-                    <div class="card-body">
-                        <form id="reserveForm">
-                            <div class="form-group row">
-                                <label for="numCampers" class="col-form-label col-sm-6">Number of Campers</label>
-
-                                <div class="col">
-                                    <select name="numCampers" id="numCampers" class="form-control">
-                                        <option value="Select...">Select...</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="date" class="col-form-label col-sm-6">Date</label>
-
-                                <div class="col">
-                                    <input type="date" id="date" name="date" class="form-control"
-                                        placeholder="mm/dd/yyyy">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <button type="submit" class="btn btn-primary">Search</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
     </div>
     <footer class="site-footer">
@@ -378,6 +344,22 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <script>
+        $(function() {
+            $(".carousel").carousel( { interval: 2000, pause : "false" } );
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                    $(".carousel").carousel("pause");
+                    $("#carouselButton").children("i").removeClass("fa-pause");
+                    $("#carouselButton").children("i").addClass("fa-play");
+                } else {
+                    $(".carousel").carousel("cycle");
+                    $("#carouselButton").children("i").removeClass("fa-play");
+                    $("#carouselButton").children("i").addClass("fa-pause"); 
+                }
+            });
+        });
+    </script>
 
 
 </body>
